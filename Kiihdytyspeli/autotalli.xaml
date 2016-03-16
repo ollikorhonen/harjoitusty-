@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="Kiihdytyspeli.autotalli"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Kiihdytyspeli"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="takaisinbutton" 
+                Content="Takaisin" 
+                HorizontalAlignment="Left" 
+                Margin="1100,90,0,0" 
+                VerticalAlignment="Top"
+                Click="takaisinbutton_Click"/>
+        
+        <Button x:Name="button" 
+                Content="Autokauppa" 
+                HorizontalAlignment="Left" 
+                Margin="264,153,0,0" 
+                VerticalAlignment="Top"/>
+        
+        <Button x:Name="button1" 
+                Content="Kisaamaan" 
+                HorizontalAlignment="Left" 
+                Margin="858,153,0,0" 
+                VerticalAlignment="Top" RenderTransformOrigin="0.949,-0.458"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="520,175,0,0" TextWrapping="Wrap" Text="Autotalli" VerticalAlignment="Top" Width="281" Height="97" FontSize="48"/>
+    </Grid>
+</Page>

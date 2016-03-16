@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="Kiihdytyspeli.peli"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Kiihdytyspeli"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="takaisinbutton" 
+                Content="Takaisin" 
+                HorizontalAlignment="Left" 
+                Margin="1100,90,0,0" 
+                VerticalAlignment="Top"
+                Click="takaisinbutton_Click"/>
+        
+        <TextBlock x:Name="nimimerkkitextBlock" 
+                   HorizontalAlignment="Left" 
+                   Margin="598,195,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="Nimimerkki" 
+                   VerticalAlignment="Top"/>
+
+        <TextBox x:Name="nimimerkkitextBox" 
+                 HorizontalAlignment="Left"
+                 Margin="598,220,0,0" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 VerticalAlignment="Top" 
+                 Width="141"/>
+
+        <Button x:Name="jatkabutton" 
+                Content="Jatka" 
+                HorizontalAlignment="Left" 
+                Margin="754,388,0,0" 
+                VerticalAlignment="Top"
+                Click="jatkabutton_Click"
+                />
+
+    </Grid>
+</Page>

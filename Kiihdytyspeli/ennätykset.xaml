@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="Kiihdytyspeli.ennätykset"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Kiihdytyspeli"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="takaisinbutton" 
+                Content="Takaisin" 
+                HorizontalAlignment="Left" 
+                Margin="1100,90,0,0" 
+                VerticalAlignment="Top"
+                Click="takaisinbutton_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="593,189,0,0" TextWrapping="Wrap" Text="Ennätykset" VerticalAlignment="Top" RenderTransformOrigin="0.305,0.533"/>
+    </Grid>
+</Page>
