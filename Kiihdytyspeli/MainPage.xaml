@@ -7,29 +7,35 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/tausta.jpg"/>
+        </Grid.Background>
+
+
         <Button x:Name="aloitapelibutton" 
                 Content="Aloita peli" 
                 HorizontalAlignment="Left" 
-                Margin="590,254,0,0" 
+                Margin="306,181,0,0" 
                 VerticalAlignment="Top" 
-                Width="92"
-                Click="aloitapelibutton_Click"/>
-        
+                Width="200"
+                Click="aloitapelibutton_Click" Background="#FF0ABD06" FontFamily="Papyrus" FontWeight="Bold" FontSize="26.667"/>
+
         <Button x:Name="tekijatbutton1"
-                Content="tekijät" 
+                Content="Tekijät" 
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Top" 
-                Margin="590,393,0,0" 
-                Width="92"
-                Click="tekijatbutton1_Click"/>
-        
+                Margin="795,181,0,0" 
+                Width="200"
+                Click="tekijatbutton1_Click" Background="#FFF7D627" FontFamily="Papyrus" FontWeight="Bold" FontSize="26.667"/>
+
         <Button x:Name="ennatyksetbutton2" 
                 Content="Ennätykset" 
                 HorizontalAlignment="Left" 
-                Margin="590,325,0,0" 
+                Margin="550,181,0,0" 
                 VerticalAlignment="Top"
-                Click="ennatyksetbutton2_Click"/>
+                Click="ennatyksetbutton2_Click"
+                Width="200" Background="#FF00CBFF" FontFamily="Papyrus" FontWeight="Bold" FontSize="26.667"/>
 
     </Grid>
 </Page>

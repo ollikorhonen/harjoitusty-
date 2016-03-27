@@ -16,7 +16,7 @@
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
-            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="Peliosuus" FontSize="50" HorizontalAlignment="Center"/> 
+            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="Peliosuus" FontSize="50" HorizontalAlignment="Center" FontFamily="Papyrus" FontWeight="Bold" Background="#FFA6D5F9"/> 
         </StackPanel>
         <StackPanel Grid.Row="1" Background="Black"></StackPanel>
         <StackPanel Grid.Row="3" Background="Black"></StackPanel>

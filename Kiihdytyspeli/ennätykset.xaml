@@ -13,7 +13,7 @@
                 HorizontalAlignment="Left" 
                 Margin="1100,90,0,0" 
                 VerticalAlignment="Top"
-                Click="takaisinbutton_Click"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="593,189,0,0" TextWrapping="Wrap" Text="Ennätykset" VerticalAlignment="Top" RenderTransformOrigin="0.305,0.533"/>
+                Click="takaisinbutton_Click" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="502,140,0,0" TextWrapping="Wrap" Text="Ennätykset" VerticalAlignment="Top" RenderTransformOrigin="0.305,0.533" FontSize="48" FontFamily="Papyrus" FontWeight="Bold"/>
     </Grid>
 </Page>
