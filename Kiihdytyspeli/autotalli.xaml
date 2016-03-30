@@ -30,7 +30,8 @@
                 Content="Kisaamaan" 
                 HorizontalAlignment="Left" 
                 Margin="878,158,0,0" 
-                VerticalAlignment="Top" RenderTransformOrigin="0.949,-0.458" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"/>
+                VerticalAlignment="Top" RenderTransformOrigin="0.949,-0.458" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"
+                Click="button1_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="562,25,0,0" TextWrapping="Wrap" Text="Autotalli" VerticalAlignment="Top" Width="281" Height="97" FontSize="48" SelectionHighlightColor="#FF6FC1C3" Foreground="#FFFBF9F9" FontFamily="Papyrus" FontWeight="Bold"/>
     </Grid>
 </Page>

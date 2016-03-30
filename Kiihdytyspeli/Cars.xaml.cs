@@ -20,23 +20,23 @@ namespace Kiihdytyspeli
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class peliosuus : Page
+    public sealed partial class Cars : Page
     {
+        // field variables
+        private List<Car> cars;
 
-        public peliosuus()
+        // property variables
+        public string Owner { get; set; }
+
+        public void AddCar(Car car)
+        {
+            cars.Add(car);
+        }
+
+        public Cars()
         {
             this.InitializeComponent();
-
-        // Ei mitaan hajua miten tama toimii
-       
-        //create new car register
-        Cars carClass= new Cars();
-
-        // create new car object
-        Car car1 = new Car();
-
-            GameCanvas.Children.Add(car1);
-
+            cars = new List<Car>();
         }
     }
 }

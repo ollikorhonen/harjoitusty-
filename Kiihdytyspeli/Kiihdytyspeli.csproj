@@ -98,11 +98,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Car.cs" />
     <Compile Include="autotalli.xaml.cs">
       <DependentUpon>autotalli.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Cars.cs" />
+    <Compile Include="Car.xaml.cs">
+      <DependentUpon>Car.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cars.xaml.cs">
+      <DependentUpon>Cars.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ennätykset.xaml.cs">
       <DependentUpon>ennätykset.xaml</DependentUpon>
     </Compile>
@@ -127,6 +131,7 @@
     <None Include="Kiihdytyspeli_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\auto.png" />
     <Content Include="Assets\autotalli.jpg" />
     <Content Include="Assets\tausta.jpg" />
     <Content Include="Properties\Default.rd.xml" />
@@ -144,6 +149,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="autotalli.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Car.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cars.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
