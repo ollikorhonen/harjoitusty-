@@ -22,6 +22,11 @@ namespace Kiihdytyspeli
     /// </summary>
     public sealed partial class peliosuus : Page
     {
+        private double GameCanvasWidth;
+        private double GameCanvasHeight;
+        private Car car1;
+
+        private DispatcherTimer timer;
 
         public peliosuus()
         {
@@ -32,11 +37,45 @@ namespace Kiihdytyspeli
         //create new car register
         Cars carClass= new Cars();
 
-        // create new car object
-        Car car1 = new Car();
 
-            GameCanvas.Children.Add(car1);
+       // get canvas width and height
+       GameCanvasWidth = GameCanvas.Width;
+       GameCanvasHeight = GameCanvas.Height;
 
+
+
+
+            // create new car object
+            Car car1 = new Car
+            {
+                LocationX = 1,
+                LocationY = GameCanvasHeight / 2
+            };
+
+            // make car object to move
+
+
+        // add car to canvas
+        GameCanvas.Children.Add(car1);
+
+
+            // game loop
+            timer = new DispatcherTimer();
+            timer.Tick += Timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 1000);
+            timer.Start();
+            
+
+            car1.Move();
+            //Update car location
+            car1.UpdateLocation();
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            car1.Move();
+            //Update car location
+            car1.UpdateLocation();
         }
     }
 }

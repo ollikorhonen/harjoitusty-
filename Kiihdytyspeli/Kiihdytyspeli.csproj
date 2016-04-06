@@ -133,6 +133,7 @@
   <ItemGroup>
     <Content Include="Assets\auto.png" />
     <Content Include="Assets\autotalli.jpg" />
+    <Content Include="Assets\road.jpg" />
     <Content Include="Assets\tausta.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

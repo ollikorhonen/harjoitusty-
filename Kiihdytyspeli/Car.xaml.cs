@@ -21,19 +21,22 @@ namespace Kiihdytyspeli
     {
         
         // field variables -- Sisäiset muuttujat
-        private int speed;
+        private double speed;
+        private readonly double Accelerate = 0.5;
+        private readonly double MaxSpeed = 10.0;
         private int gearAmount;
 
         // property variables -- Ominaisuudet
         public double LocationX { get; set; }
-
+        public double LocationY { get; set; }
         public int Speed { get; set; }
         public string Color { get; set; }
         public string Brand { get; set; }
-        public int MaxSpeed { get; set; }
+        // public int MaxSpeed { get; set; }
         public int CurrentGear { get; set; }
         public int GearAmount { get; set; }
         public int CarPrice { get; set; }
+        
 
         // methods -- Toiminnallisuudet
 
@@ -50,7 +53,7 @@ namespace Kiihdytyspeli
         }
 
         // Kiihdytys
-        public void Accelerate()
+        public void Accelerate2()
         {
             Speed += 20;
         }
@@ -67,5 +70,26 @@ namespace Kiihdytyspeli
             Width = 50;
             Height = 40;
         }
+        public void UpdateLocation()
+        {
+            SetValue(Canvas.LeftProperty, LocationX);
+            SetValue(Canvas.TopProperty, LocationY);
+        }
+
+        public void Move()
+        {
+            speed += Accelerate;
+            if (speed > MaxSpeed) speed = MaxSpeed;
+            SetValue(Canvas.LeftProperty, LocationX);
+            
+            // update location values
+            LocationX += 1 * speed;
+        }
+
+
+
+        
+
+
     }
 }

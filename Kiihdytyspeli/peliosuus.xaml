@@ -8,12 +8,21 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Canvas 
+        <Canvas
             x:Name="GameCanvas"
             Width="1280"
             Height="720"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Center"
+            >
+            <Canvas.Background>
+
+                <ImageBrush Stretch="None" 
+                        ImageSource="Assets/road.jpg">
+
+                </ImageBrush>
+                </Canvas.Background>
+        </Canvas>
 
     </Grid>
 </Page>

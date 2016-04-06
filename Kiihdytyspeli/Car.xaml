@@ -11,7 +11,12 @@
 
     <Rectangle Width="50" Height="40">
         <Rectangle.Fill>
-            <ImageBrush ImageSource="Assets/auto.png"/>
+            <ImageBrush ImageSource="Assets/auto.png">
+                <ImageBrush.Transform>
+                    <TranslateTransform x:Name="SpriteSheetOffset"/>
+                </ImageBrush.Transform>
+            </ImageBrush>
+            
         </Rectangle.Fill>
     </Rectangle>
 </UserControl>
