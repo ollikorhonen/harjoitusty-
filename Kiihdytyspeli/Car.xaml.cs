@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,12 +23,28 @@ namespace Kiihdytyspeli
         
         // field variables -- Sisäiset muuttujat
         private double speed;
-        private readonly double Accelerate = 0.5;
-        private readonly double MaxSpeed = 10.0;
+        public double Accelerate = 0.5;
+        public double MaxSpeed = 100.0;
         private int gearAmount;
+        private double locationX;
+        private double maxLocationX = 1150;
 
         // property variables -- Ominaisuudet
-        public double LocationX { get; set; }
+        public double LocationX
+        {
+            get
+            {
+                return locationX;
+            }
+            set
+            {
+                if (value <= maxLocationX) locationX = value;
+                else
+                {
+                    locationX = maxLocationX;
+                }
+            }
+        }
         public double LocationY { get; set; }
         public int Speed { get; set; }
         public string Color { get; set; }
@@ -79,16 +96,17 @@ namespace Kiihdytyspeli
         public void Move()
         {
             speed += Accelerate;
+
             if (speed > MaxSpeed) speed = MaxSpeed;
             SetValue(Canvas.LeftProperty, LocationX);
-            
+           // Debug.WriteLine(speed);
             // update location values
             LocationX += 1 * speed;
         }
 
+      
 
 
-        
 
 
     }
