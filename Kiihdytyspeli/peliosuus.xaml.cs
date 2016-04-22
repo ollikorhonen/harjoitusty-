@@ -137,5 +137,15 @@ namespace Kiihdytyspeli
                 car1.UpdateLocation();
                 car2.UpdateLocation();
         }
+
+        private void playAgainButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(peliosuus));
+        }
+
+        private void returnGarageButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(autotalli));
+        }
     }
 }

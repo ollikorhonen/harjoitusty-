@@ -19,7 +19,7 @@
                    HorizontalAlignment="Left" 
                    Margin="445,232,0,0" 
                    TextWrapping="Wrap" 
-                   Text="Tämän huikeen pelin on valmistanut ohjelmoija nerot!!!"
+                   Text="Tämän huikeen pelin on valmistanut ohjelmoijanerot Olli Korhonen, Teemu Virenius ja Juho Valtonen!!!"
                    VerticalAlignment="Top" 
                    RenderTransformOrigin="1.11,0.919"/>
     </Grid>

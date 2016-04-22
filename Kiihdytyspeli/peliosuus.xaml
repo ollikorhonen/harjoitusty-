@@ -8,6 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="returnGarageButton" 
+                Content="Takaisin" 
+                HorizontalAlignment="Left" 
+                Margin="1100,90,0,0" 
+                VerticalAlignment="Top"
+                Click="returnGarageButton_Click" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"/>
+
+        <Button x:Name="playAgainButton" 
+                Content="Pelaa uudestaan" 
+                HorizontalAlignment="Left" 
+                Margin="900,90,0,0" 
+                VerticalAlignment="Top"
+                Click="playAgainButton_Click" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"/>
+        
         <Canvas
             x:Name="GameCanvas"
             Width="1280"
