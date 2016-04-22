@@ -27,9 +27,10 @@ namespace Kiihdytyspeli
         private double GameCanvasHeight;
         private Car car1;
         private Car car2;
-
-        private DispatcherTimer timer;
+        private Maali maali1;
         private DispatcherTimer timer2;
+        private DispatcherTimer timer;
+        
         private bool SpacePressed;
 
         public peliosuus()
@@ -56,7 +57,7 @@ namespace Kiihdytyspeli
                 LocationX = 50,
                 LocationY = GameCanvasHeight / 2,
                 Speed = 1, 
-                MaxSpeed = 10
+                MaxSpeed = 80
             };
 
             car2 = new Car
@@ -64,7 +65,12 @@ namespace Kiihdytyspeli
                 LocationX = 50,
                 LocationY = (GameCanvasHeight / 2) - 45,
                 Speed = 1,
-                MaxSpeed = 8
+                MaxSpeed = 100
+            };
+            maali1 = new Maali
+            {
+                LocationX = 600,
+                LocationY = (GameCanvasHeight / 2) - 45
             };
             // make car object to move
 
@@ -72,17 +78,19 @@ namespace Kiihdytyspeli
             // add car to canvas
             GameCanvas.Children.Add(car1);
             GameCanvas.Children.Add(car2);
+            GameCanvas.Children.Add(maali1);
+            maali1.UpdateLocation();
 
             // game loop
             //timer = new DispatcherTimer();
             //timer.Tick += Timer_Tick;
-            
+
             //timer.Start();
 
             //car2 timer
             timer2 = new DispatcherTimer();
             timer2.Tick += Timer2_Tick;
-            timer2.Interval = new TimeSpan(0, 0, 0, 0, 3000);
+            //timer2.Interval = new TimeSpan(0, 0, 0, 0, 3000);
             timer2.Start();
             // car1.Move();
             //Update car location
@@ -96,6 +104,7 @@ namespace Kiihdytyspeli
             timer = new DispatcherTimer();
             timer.Tick += Timer_Tick;
             timer.Start();
+            
         }
 
         /* private void CoreWindow_KeyUp(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)

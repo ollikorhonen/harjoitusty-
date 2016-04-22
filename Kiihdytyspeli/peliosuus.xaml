@@ -21,7 +21,7 @@
                 Margin="900,90,0,0" 
                 VerticalAlignment="Top"
                 Click="playAgainButton_Click" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"/>
-        
+
         <Canvas
             x:Name="GameCanvas"
             Width="1280"
@@ -35,8 +35,9 @@
                         ImageSource="Assets/road.jpg">
 
                 </ImageBrush>
-                </Canvas.Background>
+            </Canvas.Background>
         </Canvas>
+        <TextBlock x:Name="TulosTextBlock" HorizontalAlignment="Left" Margin="427,77,0,0" TextWrapping="Wrap" Text="Voittaja" VerticalAlignment="Top" Foreground="#FF90EC0B" Height="49" Width="164" FontSize="32" SelectionHighlightColor="#FF0D0E0D"/>
 
     </Grid>
 </Page>
