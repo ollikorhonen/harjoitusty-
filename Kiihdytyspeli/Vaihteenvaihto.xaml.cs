@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Kiihdytyspeli
 {
-    public sealed partial class Maali : UserControl
+    public sealed partial class Vaihteenvaihto : UserControl
     {
         public double LocationX { get; set; }
         public double LocationY { get; set; }
@@ -27,7 +27,7 @@ namespace Kiihdytyspeli
             SetValue(Canvas.LeftProperty, LocationX);
             SetValue(Canvas.TopProperty, LocationY);
         }
-        public Maali()
+        public Vaihteenvaihto()
         {
             this.InitializeComponent();
             Width = 20;

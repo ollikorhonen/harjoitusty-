@@ -27,7 +27,6 @@ namespace Kiihdytyspeli
         private double GameCanvasHeight;
         private Car car1;
         private Car car2;
-        private Maali maali1;
         private DispatcherTimer timer2;
         private DispatcherTimer timer;
         
@@ -67,10 +66,15 @@ namespace Kiihdytyspeli
                 Speed = 1,
                 MaxSpeed = 100
             };
-            maali1 = new Maali
+             Maali maali1 = new Maali
+            {
+                LocationX = 1100,
+                LocationY = 230 
+            };
+            Vaihteenvaihto vaihteenvaihto1 = new Vaihteenvaihto
             {
                 LocationX = 600,
-                LocationY = (GameCanvasHeight / 2) - 45
+                LocationY = 230
             };
             // make car object to move
 
@@ -79,7 +83,9 @@ namespace Kiihdytyspeli
             GameCanvas.Children.Add(car1);
             GameCanvas.Children.Add(car2);
             GameCanvas.Children.Add(maali1);
+            GameCanvas.Children.Add(vaihteenvaihto1);
             maali1.UpdateLocation();
+            vaihteenvaihto1.UpdateLocation();
 
             // game loop
             //timer = new DispatcherTimer();

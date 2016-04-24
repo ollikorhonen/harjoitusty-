@@ -126,6 +126,9 @@
     <Compile Include="tekijät.xaml.cs">
       <DependentUpon>tekijät.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vaihteenvaihto.xaml.cs">
+      <DependentUpon>Vaihteenvaihto.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -136,8 +139,10 @@
   <ItemGroup>
     <Content Include="Assets\auto.png" />
     <Content Include="Assets\autotalli.jpg" />
+    <Content Include="Assets\maaliviiva.png" />
     <Content Include="Assets\road.jpg" />
     <Content Include="Assets\tausta.jpg" />
+    <Content Include="Assets\vaihteenvaihto.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -185,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="tekijät.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vaihteenvaihto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
