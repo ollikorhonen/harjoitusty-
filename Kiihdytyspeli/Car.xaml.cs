@@ -23,8 +23,8 @@ namespace Kiihdytyspeli
         
         // field variables -- Sisäiset muuttujat
         private double speed;
-        public double Accelerate = 0.1;
-        public double MaxSpeed = 100.0;
+        public double Accelerate = 0.5;
+        public double MaxSpeed = 1000.0;
         private int gearAmount;
         private double locationX;
         private double maxLocationX = 1150;
@@ -72,7 +72,7 @@ namespace Kiihdytyspeli
         // Kiihdytys
         public void Accelerate2()
         {
-            Speed += 20;
+            Speed += 200;
         }
 
         // Jarrutus

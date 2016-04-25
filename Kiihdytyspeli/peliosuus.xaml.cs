@@ -60,7 +60,7 @@ namespace Kiihdytyspeli
                 LocationX = 50,
                 LocationY = GameCanvasHeight / 2,
                 Speed = 1, 
-                MaxSpeed = 100
+                MaxSpeed = 1000
             };
 
             car2 = new Car
@@ -155,10 +155,10 @@ namespace Kiihdytyspeli
                 //Update car location
                 car1.UpdateLocation();
                 car2.UpdateLocation();
-                CheckCollision();
+                CheckCollisionGoal();
         }
 
-        private void CheckCollision()
+        private void CheckCollisionGoal()
         {
             //get car and goal rects
             Rect rCar1 = new Rect(car1.LocationX, car1.LocationY, car1.ActualWidth, car1.ActualHeight);
@@ -173,16 +173,39 @@ namespace Kiihdytyspeli
                     TulosTextBlock.Text = "Voittaja: Tietokone";
 
                 }
-                
+               
                 if (!rCar1.IsEmpty) 
                 {
                     TulosTextBlock.Text = "Voittaja: Pelaaja";
                     
                 }
+                break;     
+            }
+        }
+
+        private void CheckCollisionShift()
+        {
+            //get car and goal rects
+            Rect rCar1 = new Rect(car1.LocationX, car1.LocationY, car1.ActualWidth, car1.ActualHeight);
+            Rect rCar2 = new Rect(car2.LocationX, car2.LocationY, car2.ActualWidth, car2.ActualHeight);
+            Rect rVaihteentaihto = new Rect(vaihteenvaihto1.LocationX, vaihteenvaihto1.LocationY, vaihteenvaihto1.ActualWidth, vaihteenvaihto1.ActualHeight);
+            rCar1.Intersect(rVaihteentaihto);
+            rCar2.Intersect(rVaihteentaihto);
+
+            while (!rCar1.IsEmpty == true || !rCar2.IsEmpty == true)
+            {
+                if (!rCar2.IsEmpty)
+                {
+                    car2.Accelerate2();
+
+                }
+
+                if (!rCar1.IsEmpty)
+                {
+                    car1.Accelerate2();
+
+                }
                 break;
-            //Rect rCar2 = new Rect(car2.LocationX, car2.LocationY, car2.ActualWidth, car2.ActualHeight);
-           // rCar2.Intersect(rMaali);
-            
             }
         }
 
