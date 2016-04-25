@@ -27,9 +27,13 @@ namespace Kiihdytyspeli
         private double GameCanvasHeight;
         private Car car1;
         private Car car2;
+        private Maali maali1;
+        private Vaihteenvaihto vaihteenvaihto1;
         private DispatcherTimer timer2;
         private DispatcherTimer timer;
-        
+        private bool tormays1;
+        private bool tormays2;
+
         private bool SpacePressed;
 
         public peliosuus()
@@ -56,7 +60,7 @@ namespace Kiihdytyspeli
                 LocationX = 50,
                 LocationY = GameCanvasHeight / 2,
                 Speed = 1, 
-                MaxSpeed = 80
+                MaxSpeed = 100
             };
 
             car2 = new Car
@@ -64,14 +68,14 @@ namespace Kiihdytyspeli
                 LocationX = 50,
                 LocationY = (GameCanvasHeight / 2) - 45,
                 Speed = 1,
-                MaxSpeed = 100
+                MaxSpeed = 5
             };
-             Maali maali1 = new Maali
+              maali1 = new Maali
             {
                 LocationX = 1100,
                 LocationY = 230 
             };
-            Vaihteenvaihto vaihteenvaihto1 = new Vaihteenvaihto
+             vaihteenvaihto1 = new Vaihteenvaihto
             {
                 LocationX = 600,
                 LocationY = 230
@@ -80,10 +84,10 @@ namespace Kiihdytyspeli
 
 
             // add car to canvas
+            GameCanvas.Children.Add(vaihteenvaihto1);
+            GameCanvas.Children.Add(maali1);
             GameCanvas.Children.Add(car1);
             GameCanvas.Children.Add(car2);
-            GameCanvas.Children.Add(maali1);
-            GameCanvas.Children.Add(vaihteenvaihto1);
             maali1.UpdateLocation();
             vaihteenvaihto1.UpdateLocation();
 
@@ -151,6 +155,35 @@ namespace Kiihdytyspeli
                 //Update car location
                 car1.UpdateLocation();
                 car2.UpdateLocation();
+                CheckCollision();
+        }
+
+        private void CheckCollision()
+        {
+            //get car and goal rects
+            Rect rCar1 = new Rect(car1.LocationX, car1.LocationY, car1.ActualWidth, car1.ActualHeight);
+            Rect rCar2 = new Rect(car2.LocationX, car2.LocationY, car2.ActualWidth, car2.ActualHeight);
+            Rect rMaali = new Rect(maali1.LocationX, maali1.LocationY, maali1.ActualWidth, maali1.ActualHeight);
+            rCar1.Intersect(rMaali);
+            rCar2.Intersect(rMaali);
+
+            while (!rCar1.IsEmpty == true || !rCar2.IsEmpty == true) {
+                if (!rCar2.IsEmpty)
+                {
+                    TulosTextBlock.Text = "Voittaja: Tietokone";
+
+                }
+                
+                if (!rCar1.IsEmpty) 
+                {
+                    TulosTextBlock.Text = "Voittaja: Pelaaja";
+                    
+                }
+                break;
+            //Rect rCar2 = new Rect(car2.LocationX, car2.LocationY, car2.ActualWidth, car2.ActualHeight);
+           // rCar2.Intersect(rMaali);
+            
+            }
         }
 
         private void playAgainButton_Click(object sender, RoutedEventArgs e)
