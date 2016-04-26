@@ -176,7 +176,7 @@ namespace Kiihdytyspeli
           //  while (!rCar1.IsEmpty == true || !rCar2.IsEmpty == true) {
                 if (!rCar2.IsEmpty)
                 {
-                    TulosTextBlock.Text = "Pasi";
+                    TulosTextBlock.Text = "Tietokone";
 
                 }
                
