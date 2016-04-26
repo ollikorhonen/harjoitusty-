@@ -39,7 +39,11 @@ namespace Kiihdytyspeli
             this.InitializeComponent();
             //key listeners
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
-          //  Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
+            //  Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
+
+            
+
+         
        
         //create new car register
         Cars carClass= new Cars();
@@ -48,9 +52,6 @@ namespace Kiihdytyspeli
        // get canvas width and height
        GameCanvasWidth = GameCanvas.Width;
        GameCanvasHeight = GameCanvas.Height;
-
-
-
 
             // create new car object
             car1 = new Car
@@ -81,27 +82,30 @@ namespace Kiihdytyspeli
             // make car object to move
 
 
-            // add car to canvas
+            // add cars, shiftArea and goal to canvas
             GameCanvas.Children.Add(vaihteenvaihto1);
             GameCanvas.Children.Add(maali1);
             GameCanvas.Children.Add(car1);
             GameCanvas.Children.Add(car2);
+
             maali1.UpdateLocation();
             vaihteenvaihto1.UpdateLocation();
 
-            /* game loop
-            timer = new DispatcherTimer();
-            timer.Tick += Timer_Tick;
-            timer.Start();*/
+            // start game loop
+            StartGame();
 
-            //car2 timer
-            timer2 = new DispatcherTimer();
-            timer2.Tick += Timer2_Tick;
-            //timer2.Interval = new TimeSpan(0, 0, 0, 0, 3000);
-            timer2.Start();
             // car1.Move();
             //Update car location
             //car1.UpdateLocation();
+        }
+
+        private void StartGame()
+        {
+            //car2 timer
+        timer2 = new DispatcherTimer();
+        timer2.Tick += Timer2_Tick;
+        //timer2.Interval = new TimeSpan(0, 0, 0, 0, 3000);
+        timer2.Start();
         }
 
         private void Timer2_Tick(object sender, object e)
