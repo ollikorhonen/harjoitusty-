@@ -88,15 +88,19 @@ namespace Kiihdytyspeli
             GameCanvas.Children.Add(car1);
             GameCanvas.Children.Add(car2);
 
+            // update user controls locations
             maali1.UpdateLocation();
             vaihteenvaihto1.UpdateLocation();
 
+            car1.UpdateLocation();
+            car2.UpdateLocation();
+            
             // start game loop
             StartGame();
 
             // car1.Move();
             //Update car location
-            //car1.UpdateLocation();
+            
         }
 
         private void StartGame()
@@ -104,7 +108,7 @@ namespace Kiihdytyspeli
             //car2 timer
         timer2 = new DispatcherTimer();
         timer2.Tick += Timer2_Tick;
-        //timer2.Interval = new TimeSpan(0, 0, 0, 0, 3000);
+        timer2.Interval = new TimeSpan(0, 0, 0, 0, 3000);
         timer2.Start();
         }
 
