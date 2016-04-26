@@ -116,8 +116,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="nimimerkki.xaml.cs">
-      <DependentUpon>nimimerkki.xaml</DependentUpon>
+    <Compile Include="Nimimerkki.xaml.cs">
+      <DependentUpon>Nimimerkki.xaml</DependentUpon>
     </Compile>
     <Compile Include="peliosuus.xaml.cs">
       <DependentUpon>peliosuus.xaml</DependentUpon>
@@ -181,7 +181,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="nimimerkki.xaml">
+    <Page Include="Nimimerkki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

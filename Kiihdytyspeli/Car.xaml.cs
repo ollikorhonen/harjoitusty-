@@ -72,13 +72,13 @@ namespace Kiihdytyspeli
         // Kiihdytys
         public void Accelerate2()
         {
-            Speed += 200;
+            MaxSpeed += 100;
         }
 
         // Jarrutus
         public void Brake()
         {
-            Speed -= 20;
+            MaxSpeed = 0;
         }
 
         public Car()

@@ -27,6 +27,21 @@ namespace Kiihdytyspeli
             this.InitializeComponent();
         }
 
+        // vastaanotetaan nimimerkkitieto
+          protected override void OnNavigatedTo(NavigationEventArgs e)
+          {
+              if (e.Parameter is Nimimerkki)
+              {
+                  Nimimerkki pelaaja = (Nimimerkki)e.Parameter;
+                nimimerkkiTextBlock.Text =  pelaaja.nimimerkki;
+              }
+              else
+              {
+                nimimerkkiTextBlock.Text = "Hi!"; 
+              }
+              base.OnNavigatedTo(e);
+          }
+
         private void takaisinbutton_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
@@ -39,7 +54,8 @@ namespace Kiihdytyspeli
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(peliosuus));
+            Nimimerkki pelaaja = new Nimimerkki { nimimerkki = nimimerkkiTextBlock.Text };
+            this.Frame.Navigate(typeof(peliosuus),pelaaja);
         }
     }
 }

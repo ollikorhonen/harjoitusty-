@@ -33,5 +33,6 @@
                 VerticalAlignment="Top" RenderTransformOrigin="0.949,-0.458" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"
                 Click="button1_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="562,25,0,0" TextWrapping="Wrap" Text="Autotalli" VerticalAlignment="Top" Width="281" Height="97" FontSize="48" SelectionHighlightColor="#FF6FC1C3" Foreground="#FFFBF9F9" FontFamily="Papyrus" FontWeight="Bold"/>
+        <TextBlock x:Name="nimimerkkiTextBlock" HorizontalAlignment="Left" Margin="501,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="118" Width="283" Foreground="Red" FontSize="100" SelectionHighlightColor="#FF0D0E0D" TextAlignment="Center"/>
     </Grid>
 </Page>

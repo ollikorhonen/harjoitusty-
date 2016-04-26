@@ -15,13 +15,6 @@
                 VerticalAlignment="Top"
                 Click="returnGarageButton_Click" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"/>
 
-        <Button x:Name="playAgainButton" 
-                Content="Pelaa uudestaan" 
-                HorizontalAlignment="Left" 
-                Margin="900,90,0,0" 
-                VerticalAlignment="Top"
-                Click="playAgainButton_Click" Background="#FFA6D5F9" FontFamily="Papyrus" FontWeight="Bold"/>
-
         <Canvas
             x:Name="GameCanvas"
             Width="1280"
@@ -37,7 +30,9 @@
                 </ImageBrush>
             </Canvas.Background>
         </Canvas>
-        <TextBlock x:Name="TulosTextBlock" HorizontalAlignment="Left" Margin="427,77,0,0" TextWrapping="Wrap" Text="Voittaja" VerticalAlignment="Top" Foreground="#FF90EC0B" Height="129" Width="319" FontSize="32" SelectionHighlightColor="#FF0D0E0D"/>
+        <TextBlock x:Name="TulosTextBlock" HorizontalAlignment="Left" Margin="471,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF90EC0B" Height="78" Width="236" FontSize="32" SelectionHighlightColor="#FF0D0E0D" SelectionChanged="TulosTextBlock_SelectionChanged"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="471,0,0,0" TextWrapping="Wrap" Text="Häviäjä" VerticalAlignment="Top" Height="79" Width="140" Foreground="Orange" FontSize="32" SelectionHighlightColor="#FF0D0E0D" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBlock x:Name="pelaajatextBlock1" HorizontalAlignment="Left" Margin="220,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="204" Foreground="Red" FontSize="32" SelectionHighlightColor="#FF0D0E0D"/>
 
     </Grid>
 </Page>

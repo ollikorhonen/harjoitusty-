@@ -29,7 +29,7 @@ namespace Kiihdytyspeli
 
         private void aloitapelibutton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(peli));
+            this.Frame.Navigate(typeof(Nimimerkki));
         }
 
         private void ennatyksetbutton2_Click(object sender, RoutedEventArgs e)

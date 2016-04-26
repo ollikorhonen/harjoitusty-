@@ -20,9 +20,10 @@ namespace Kiihdytyspeli
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class peli : Page
+    public sealed partial class Nimimerkki : Page
     {
-        public peli()
+        public string nimimerkki;
+        public Nimimerkki()
         {
             this.InitializeComponent();
         }
@@ -39,7 +40,10 @@ namespace Kiihdytyspeli
 
         private void jatkabutton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(autotalli));
+            Nimimerkki pelaaja = new Nimimerkki { nimimerkki = nimimerkkitextBox.Text };
+            this.Frame.Navigate(typeof(autotalli), pelaaja);
+
+          //  this.Frame.Navigate(typeof(autotalli));
         }
-    }
+   }
 }

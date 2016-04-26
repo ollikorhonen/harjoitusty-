@@ -31,8 +31,6 @@ namespace Kiihdytyspeli
         private Vaihteenvaihto vaihteenvaihto1;
         private DispatcherTimer timer2;
         private DispatcherTimer timer;
-        private bool tormays1;
-        private bool tormays2;
 
         private bool SpacePressed;
 
@@ -60,7 +58,7 @@ namespace Kiihdytyspeli
                 LocationX = 50,
                 LocationY = GameCanvasHeight / 2,
                 Speed = 1, 
-                MaxSpeed = 1000
+                MaxSpeed = 10
             };
 
             car2 = new Car
@@ -68,7 +66,7 @@ namespace Kiihdytyspeli
                 LocationX = 50,
                 LocationY = (GameCanvasHeight / 2) - 45,
                 Speed = 1,
-                MaxSpeed = 5
+                MaxSpeed = 10
             };
               maali1 = new Maali
             {
@@ -91,11 +89,10 @@ namespace Kiihdytyspeli
             maali1.UpdateLocation();
             vaihteenvaihto1.UpdateLocation();
 
-            // game loop
-            //timer = new DispatcherTimer();
-            //timer.Tick += Timer_Tick;
-
-            //timer.Start();
+            /* game loop
+            timer = new DispatcherTimer();
+            timer.Tick += Timer_Tick;
+            timer.Start();*/
 
             //car2 timer
             timer2 = new DispatcherTimer();
@@ -156,6 +153,7 @@ namespace Kiihdytyspeli
                 car1.UpdateLocation();
                 car2.UpdateLocation();
                 CheckCollisionGoal();
+                CheckCollisionShift();
         }
 
         private void CheckCollisionGoal()
@@ -167,20 +165,21 @@ namespace Kiihdytyspeli
             rCar1.Intersect(rMaali);
             rCar2.Intersect(rMaali);
 
-            while (!rCar1.IsEmpty == true || !rCar2.IsEmpty == true) {
+          //  while (!rCar1.IsEmpty == true || !rCar2.IsEmpty == true) {
                 if (!rCar2.IsEmpty)
                 {
-                    TulosTextBlock.Text = "Voittaja: Tietokone";
+                    TulosTextBlock.Text = "Pasi";
 
                 }
                
                 if (!rCar1.IsEmpty) 
                 {
-                    TulosTextBlock.Text = "Voittaja: Pelaaja";
+
+                TulosTextBlock.Text = pelaajatextBlock1.Text;
                     
                 }
-                break;     
-            }
+               // break;     
+           // }
         }
 
         private void CheckCollisionShift()
@@ -192,11 +191,11 @@ namespace Kiihdytyspeli
             rCar1.Intersect(rVaihteentaihto);
             rCar2.Intersect(rVaihteentaihto);
 
-            while (!rCar1.IsEmpty == true || !rCar2.IsEmpty == true)
-            {
+
+            //while (!rCar1.IsEmpty == true || !rCar2.IsEmpty == true)
+          //  {
                 if (!rCar2.IsEmpty)
                 {
-                    car2.Accelerate2();
 
                 }
 
@@ -205,18 +204,42 @@ namespace Kiihdytyspeli
                     car1.Accelerate2();
 
                 }
-                break;
-            }
+           //     break;
+           // }
         }
-
-        private void playAgainButton_Click(object sender, RoutedEventArgs e)
+        // vastaanotetaan nimimerkkitieto
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(peliosuus));
+            if (e.Parameter is Nimimerkki)
+            {
+                Nimimerkki pelaaja = (Nimimerkki)e.Parameter;
+                pelaajatextBlock1.Text =  pelaaja.nimimerkki;
+            }
+            else
+            {
+                TulosTextBlock.Text = "Hi!"; 
+            }
+            base.OnNavigatedTo(e);
         }
 
         private void returnGarageButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(autotalli));
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null) return;
+            if (rootFrame.CanGoBack)
+            {
+                rootFrame.GoBack();
+            }
+        }
+
+        private void TulosTextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
