@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +23,24 @@ namespace Kiihdytyspeli
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private MediaElement mediaElement;
         public MainPage()
         {
             this.InitializeComponent();
+            InitAudio();
+        }
+
+        // load audio from assets
+        private async void InitAudio()
+        {
+            mediaElement = new MediaElement();
+            mediaElement.AutoPlay = true;
+            StorageFolder folder =
+                await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            StorageFile file = await
+                folder.GetFileAsync("musa.mp3");
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            mediaElement.SetSource(stream, file.ContentType);
         }
 
         private void aloitapelibutton_Click(object sender, RoutedEventArgs e)

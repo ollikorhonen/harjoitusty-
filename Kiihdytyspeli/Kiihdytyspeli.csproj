@@ -139,6 +139,7 @@
   <ItemGroup>
     <Content Include="Assets\auto.png" />
     <Content Include="Assets\autotalli.jpg" />
+    <Content Include="Assets\musa.mp3" />
     <Content Include="Assets\maaliviiva.png" />
     <Content Include="Assets\road.jpg" />
     <Content Include="Assets\tausta.jpg" />
